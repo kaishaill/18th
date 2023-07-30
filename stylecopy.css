@@ -1,0 +1,225 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  background: rgb(141, 91, 68) !important;
+}
+
+
+h1{
+    font-weight: normal;
+    font-size: 35px;
+    position: relative;
+    margin: 40px 0;
+}
+
+h1::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: rgb(241, 206, 189);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: animate 4s linear infinite;
+}
+@keyframes animate{
+    0%{
+        width: 100px;
+    }
+    50%{
+        width: 200px;
+    }
+    100%{
+        width: 100px;
+    }
+}
+
+.container{
+  max-width: 1350px;
+  position: relative;
+  width: 100%;
+  padding: 50px;
+  margin: 50px auto;
+  text-align: center;
+  margin-top: 35px;
+    margin-bottom: -15px;
+  align-items: center;
+  color: #e4af91;
+}
+
+.filter-buttons{
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgb(204, 144, 116);
+    text-align: center;
+    height: 60px;
+    margin: 0 auto 20px auto;
+    margin-top: 70px;
+    margin-bottom: -60px;
+    width: 90%;
+}
+
+.filter-buttons button{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 60px;
+}
+
+.filter-buttons button.item{
+  padding-left: 90px;
+  color: rgb(141, 91, 68);
+  box-sizing: border-box;
+  border: 5px solid rgb(241, 226, 218);
+}
+
+.filter-buttons button.regina{
+  padding-left: 80px;
+  color: rgb(141, 91, 68);
+  box-sizing: border-box;
+  border: 5px solid rgb(241, 226, 218);
+}
+
+.filter-buttons button.sulat{
+  padding-left: 100px;
+  color: rgb(141, 91, 68);
+  box-sizing: border-box;
+  border: 5px solid rgb(241, 226, 218);
+}
+
+.filter-buttons button.sulat a{
+  color: rgb(141, 91, 68);
+  text-decoration: none;
+  list-style: none;
+}
+
+.filter-buttons button.us{
+  padding-left: 20px;
+  color: rgb(141, 91, 68);
+  box-sizing: border-box;
+  border: 5px solid rgb(241, 226, 218);
+}
+
+button{
+  border-radius: 10px;
+  background: rgb(241, 206, 189);
+  border-color: transparent;
+  line-height: 60px;
+  font-size: 18px;
+  height: 100%;
+  margin: 0 20px;
+  transition: color .5s;
+  display: inline-block;
+  text-align: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.filter-buttons button:hover {
+  background: rgb(223, 163, 136);
+  color: rgb(245, 211, 196);
+}
+
+.filter-buttons button.active {
+    color: rgb(245, 211, 196);
+  background: rgb(223, 163, 136);
+}
+
+.card{
+    position: relative;
+    height: 300px;
+    width: 213px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgb(204, 157, 136);
+    cursor: pointer;
+}
+.card img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    transition: .5s;
+    box-sizing: border-box;
+    border: 5px solid rgb(241, 226, 218);
+}
+
+.card.hide{
+  display: none;
+}
+
+.filterable-cards{
+    width: 70%;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 100px auto 50px;
+    grid-gap: 30px;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  #filterable-cards {
+    justify-content: center;
+  }
+  #filterable-cards .card {
+    width: calc(100% / 2 - 10px);
+  }
+}
+
+.mia{
+  position: relative;
+  height: 300px;
+  width: 213px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px rgb(204, 157, 136);
+  cursor: pointer;
+}
+.mia img{
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  transition: .5s;
+}
+
+.card::before{
+  content: "MONTHSARY GALLERY";
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50% -50%);
+  color: rgb(250, 211, 193);
+  font-size: 15px;
+  font-weight: bold;
+  opacity: 0;
+  transition: .3s;
+  transition-delay: .2s;
+  z-index: 1;
+}
+.card:after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-radius: 10px;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.164);
+  transition: .3s;
+}
+.card:hover::after{
+  height: 100%;
+}
+.card:hover::before{
+  margin-top: 0;
+  opacity: 1;
+}
+
+
